@@ -1,0 +1,28 @@
+spring:
+  output:
+    ansi:
+      enabled: always
+  kafka:
+    bootstrap-servers: localhost:29092
+
+  datasource:
+    url: jdbc:p6spy:mysql://riot-db.mysql.database.azure.com:3306/riotdb?characterEncoding=UTF-8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+    username: ${MYSQL_USER}
+    password: ${MYSQL_PASSWORD}
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+
+gpt:
+  api:
+    url: https://api.openai.com
+    key: ${GPT_API_KEY}
+
+  cloud:
+    openfeign:
+      client:
+        config:
+          default:
+            readTimeout: 100000
