@@ -51,7 +51,7 @@ public class GptAnalyzeService {
         Message user = Message.of("user", userMessage);
 
         GptRequest request = GptRequest.builder()
-                .model("gpt-4")
+                .model("gpt-3.5-turbo")
                 .messages(List.of(system, user))
                 .build();
 
