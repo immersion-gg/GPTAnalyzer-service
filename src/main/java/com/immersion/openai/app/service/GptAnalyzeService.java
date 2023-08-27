@@ -44,6 +44,8 @@ public class GptAnalyzeService {
 
         String jsonData = objectMapper.writeValueAsString(data);
 
+        log.info("kafka message data : {}", jsonData);
+
         String userMessage = String.format("다음 데이터는 리그오브레전드 어떤 유저가 %s를 플레이했을때의 상대 챔피언별 승률 통계입니다. %s 해당 통계를 보고 게임 전문가인 당신이 해당 챔피언들의 특성(근거리, 원거리, AD, AP 등등)을 고려하여 분석하고 총 평가를 말해주시기 바랍니다.",
                 data.getChampionName(), jsonData);
 

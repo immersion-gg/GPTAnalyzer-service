@@ -9,6 +9,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 public class KafkaProperties {
     public static final String CONSUMER_GROUP_ID = "chatGpt";
 
-    @Value("${spring.kafka.bootstrap-servers}")
+    @Value("${spring.kafka.consumer.bootstrap-servers}")
     private String bootStrapServers;
 }
